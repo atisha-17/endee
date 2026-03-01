@@ -1,14 +1,14 @@
 import streamlit as st
 from engine import EndeeEngine
 
-st.set_page_config(page_title="Endee Semantic Search", page_icon="⚡")
+st.set_page_config(page_title="Endee Semantic Search")
 
 # Initialize Engine
 if 'engine' not in st.session_state:
     st.session_state.engine = EndeeEngine()
     st.session_state.engine.ensure_index()
 
-st.title("⚡ Endee High-Performance AI Agent")
+st.title("Endee High-Performance AI Agent")
 st.markdown("This project demonstrates **Semantic Search** using the Endee Vector Database.")
 
 # Sidebar for Ingestion
@@ -40,4 +40,3 @@ if query:
                 st.write(res.get('metadata', {}).get('text', 'No text found'))
 
 st.divider()
-st.caption("Built for Endee.io Internship-cum-Placement Opportunity 2026")
